@@ -1,0 +1,9 @@
+[project]
+name = "ShareReady"
+version = "0.1.0"
+description = "Move janelas do Monitor 2 para o monitor 1."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "pywin32>=311",
+]
