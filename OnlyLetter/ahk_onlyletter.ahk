@@ -1,4 +1,5 @@
 #NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
+#SingleInstance, [force]
 ; #Warn  ; Enable warnings to assist with detecting common errors.
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
@@ -6,6 +7,8 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 ; --- LEITURA DE CONFIGURAÇÃO ---
 IniRead, EverythingPath, %A_ScriptDir%\config.ini, AppPaths, Everything, %A_Space%
 IniRead, ShareReadyPath, %A_ScriptDir%\config.ini, AppPaths, ShareReady, %A_Space%
+IniRead, RandomMsgTudoBem, %A_ScriptDir%\config.ini, AppPaths, MsgTudoBem, %A_Space%
+IniRead, RandomMsgAfk, %A_ScriptDir%\config.ini, AppPaths, MsgAfk, %A_Space%
 ;
 ; Exemplo de arquivo config.ini
 ;
@@ -14,7 +17,6 @@ IniRead, ShareReadyPath, %A_ScriptDir%\config.ini, AppPaths, ShareReady, %A_Spac
 ; ShareReady=D:\AHK\scripts\ShareReady.ahk
 ;
 ; -------------------------------
-
 ; super vertical window
 ResizeWin(Width = 0,Height = 0)
 {
@@ -117,11 +119,7 @@ RAlt & z::send, {\}
 ; RAlt+x=|
 RAlt & x::send, {|}
 
-; win+f para pesquisa no everything
-; #F:: ; Isso define a combinação de teclas Windows+F
-; Run "D:\app\everything\1.5\Everything.lnk" ; Substitua pelo caminho do programa que você deseja abrir
-; return
-
+; win+f para pesquisa no app everything
 #F::
 if (EverythingPath != "" && FileExist(EverythingPath))
     Run, %EverythingPath%
@@ -132,7 +130,7 @@ return
 ; Mudar o dispositivo de áudio padrão para headphone
 RAlt & 4::Run, %ComSpec% /c "nircmd.exe setdefaultsounddevice "Realtek HD Audio 2nd output" 1"
 
-; Mudar o dispositivo de áudio padrão para autofalante
+; Mudar o dispositivo de áudio padrão para autofalantes
 RAlt & 5::Run, %ComSpec% /c "nircmd.exe setdefaultsounddevice "Alto-falantes-notebook" 1"
 
 ; Arrows & navigation start
@@ -160,7 +158,14 @@ return
 *j::send {blind}{left}
 *i::send {blind}{up}
 *l::send {blind}{right}
-; Arrows & navigation end
+; -- Arrows & navigation end
 
-; inserir mensagem por atalho
-RAlt & 1::send tudo bem, gra{U+00E7}as {U+0061}{U+0300} Deus. e contigo?
+; Inserir mensagem por atalho
+RAlt & 1::
+    Run, %RandomMsgTudoBem%
+return
+
+RAlt & 2:: ; Respondendo que estou ausente
+    Run, %RandomMsgAfk%
+return
+
