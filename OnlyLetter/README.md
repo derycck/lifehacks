@@ -10,40 +10,40 @@ Solução: Remapear teclas para que todas as funções possam ser acessadas sem 
 
 A tecla `RAlt` funciona como uma tecla modificadora principal ("camada de função") para a maioria dos atalhos. **As setas de navegação** só funcionam enquanto `RAlt` estiver pressionado.
 
-| Atalho                   | Ação                                                                          |
-| :----------------------- | :---------------------------------------------------------------------------- |
-| `RAlt + Q`               | Envia `/`.                                                                    |
-| `RAlt + W`               | Envia `?`.                                                                    |
-| `RAlt + E`               | Envia `[` (abre colchete).                                                    |
-| `RAlt + R`               | Envia `]` (fecha colchete).                                                   |
-| `RAlt + A`               | Envia `~` (til).                                                              |
-| `RAlt + S`               | Envia `^` (circunflexo).                                                      |
-| `RAlt + D`               | Envia `{` (abre chaves).                                                      |
-| `RAlt + F`               | Envia `}` (fecha chaves).                                                     |
-| `RAlt + Z`               | Envia `\` (barra invertida).                                                  |
-| `RAlt + X`               | Envia `\|` (pipe).                                                            |
-| `RAlt + C`               | Envia `´` (agudos).                                                           |
-| `RAlt + V`               | Envia ``` ` ``` (grave).                                                      |
-| `RAlt + 9`               | Envia `Enter`.                                                                |
-| `RAlt + Espaço`          | Envia `Backspace`.                                                            |
-| `RAlt + O`               | Envia `Home`.                                                                 |
-| `RAlt + P`               | Envia `End`.                                                                  |
-| `RAlt + N`               | Envia `Page Up`.                                                              |
-| `RAlt + M`               | Envia `Page Down`.                                                            |
-| `RAlt + '` (tecla ç)     | Envia `Insert`.                                                               |
-| `RAlt + ~` (tecla &)     | Envia `&`.                                                                    |
-| `RAlt + U`               | Redimensiona a janela ativa para um formato vertical ("super vertical").      |
-| `RAlt + -`               | Diminuir Volume.                                                              |
-| `RAlt + =`               | Aumentar Volume.                                                              |
-| `RAlt + 4`               | Define dispositivo de áudio para o fone de ouvido (via nircmd).               |
-| `RAlt + 5`               | Define dispositivo de áudio para o alto-falantes do notebook (via nircmd).    |
-| `RAlt + 1`               | Digita mensagem de texto pré-definida. Depende do script externo configurado. |
-| `RAlt + 2`               | Digita mensagem de texto pré-definida. Depende do script externo configurado. |
-| **Navegação (vim-like)** |                                                                               |
-| `RAlt + I`               | Seta para Cima (`Up`).                                                        |
-| `RAlt + K`               | Seta para Baixo (`Down`).                                                     |
-| `RAlt + J`               | Seta para Esquerda (`Left`).                                                  |
-| `RAlt + L`               | Seta para Direita (`Right`).                                                  |
+| Atalho                   | Ação                                                                       |
+| :----------------------- | :------------------------------------------------------------------------- |
+| `RAlt + Q`               | Envia `/`.                                                                 |
+| `RAlt + W`               | Envia `?`.                                                                 |
+| `RAlt + E`               | Envia `[` (abre colchete).                                                 |
+| `RAlt + R`               | Envia `]` (fecha colchete).                                                |
+| `RAlt + A`               | Envia `~` (til).                                                           |
+| `RAlt + S`               | Envia `^` (circunflexo).                                                   |
+| `RAlt + D`               | Envia `{` (abre chaves).                                                   |
+| `RAlt + F`               | Envia `}` (fecha chaves).                                                  |
+| `RAlt + Z`               | Envia `\` (barra invertida).                                               |
+| `RAlt + X`               | Envia `\|` (pipe).                                                         |
+| `RAlt + C`               | Envia `´` (agudos).                                                        |
+| `RAlt + V`               | Envia ``` ` ``` (grave).                                                   |
+| `RAlt + 9`               | Envia `Enter`.                                                             |
+| `RAlt + Espaço`          | Envia `Backspace`.                                                         |
+| `RAlt + O`               | Envia `Home`.                                                              |
+| `RAlt + P`               | Envia `End`.                                                               |
+| `RAlt + N`               | Envia `Page Up`.                                                           |
+| `RAlt + M`               | Envia `Page Down`.                                                         |
+| `RAlt + '` (tecla ç)     | Envia `Insert`.                                                            |
+| `RAlt + ~` (tecla &)     | Envia `&`.                                                                 |
+| `RAlt + U`               | Redimensiona a janela ativa para um formato vertical ("super vertical").   |
+| `RAlt + -`               | Diminuir Volume.                                                           |
+| `RAlt + =`               | Aumentar Volume.                                                           |
+| `RAlt + 4`               | Define dispositivo de áudio para o fone de ouvido (via nircmd).            |
+| `RAlt + 5`               | Define dispositivo de áudio para o alto-falantes do notebook (via nircmd). |
+| `RAlt + 1`               | Digita mensagem de texto pré-definida. Depende de script externo.          |
+| `RAlt + 2`               | Digita mensagem de texto pré-definida. Depende de script externo.          |
+| **Navegação (vim-like)** |                                                                            |
+| `RAlt + I`               | Seta para Cima (`Up`).                                                     |
+| `RAlt + K`               | Seta para Baixo (`Down`).                                                  |
+| `RAlt + J`               | Seta para Esquerda (`Left`).                                               |
+| `RAlt + L`               | Seta para Direita (`Right`).                                               |
 
 ---
 
@@ -67,12 +67,33 @@ A tecla `RAlt` funciona como uma tecla modificadora principal ("camada de funç�
 
 ---
 
+### Tecla Capslock
+
+| Atalho              | Ação   |
+| :------------------ | :----- |
+| `Capslock + Espaço` | Delete |
+
 ### Outros Mapeamentos Simples
 
 | Tecla Original | Ação       |
 | :------------- | :--------- |
 | `~` (tecla *)  | Envia `*`. |
 
+### Baseado em janela ativa
+
+Alguns atalhos funcionam apenas quando uma janela específica está ativa.
+
+**Janela do Video Proc Amp Properties**
+
+| Atalho | Ação                                                                    |
+| :----- | :---------------------------------------------------------------------- |
+| `F1`   | Executa o script externo `camset.ahk`. Ajusta a configuração da webcam. |
+
+### Desativação de Capslock
+
+O script desativa propositalmente a tecla `Capslock` (Maiúsculas) para possibilitar seu uso em combinações de teclas sem alterar o estado de maiúsculas/minúsculas do sistema operacional.
+
+Tanto o pressionamento simples de `Capslock` quanto a combinação `Shift + Capslock` são anulados e não têm efeito algum.
 
 ## Contexto
 
@@ -95,4 +116,8 @@ Caso um dispositivo desejado tenha nome duplicado com outro dispositivo, é nece
 No script, é presumido que os nomes dos dispositivos são "Realtek HD Audio 2nd output" para fones de ouvido e "Alto-falantes-notebook" para alto-falantes.
 
 No computador onde ele foi originalmente usado, o dispositivo de auto-falantes do notebook tinha o nome padrão "Alto-falantes", bem como outros drives de áudio tinham o mesmo nome, o que causava conflito. Por isso foi renomeado para "Alto-falantes-notebook" para evitar problemas.
+
+**Correção de erros de digitação**\
+Deletar caracteres à esquerda: `RAlt + Espaço` (backspace) \
+Deletar caracteres à direita: `Capslock + Espaço` (delete)
 

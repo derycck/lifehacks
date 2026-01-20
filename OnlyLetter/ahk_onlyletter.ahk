@@ -9,6 +9,7 @@ IniRead, EverythingPath, %A_ScriptDir%\config.ini, AppPaths, Everything, %A_Spac
 IniRead, ShareReadyPath, %A_ScriptDir%\config.ini, AppPaths, ShareReady, %A_Space%
 IniRead, RandomMsgTudoBem, %A_ScriptDir%\config.ini, AppPaths, MsgTudoBem, %A_Space%
 IniRead, RandomMsgAfk, %A_ScriptDir%\config.ini, AppPaths, MsgAfk, %A_Space%
+IniRead, CamsetPath, %A_ScriptDir%\config.ini, AppPaths, Camset, %A_Space%
 ;
 ; Exemplo de arquivo config.ini
 ;
@@ -84,11 +85,13 @@ RAlt & f::send {}}
 RAlt & n::send {blind}{pgup}
 RAlt & m::send {blind}{PgDn}
 
+; Desabilitar Capslock
+SHIFT & Capslock::return ; anula shift capslock
+Capslock::return ; anula capslock isolado
+
 ; Delete
-; SHIFT & Capslock::return ; anula shift capslock
 ; Ctrl & Capslock::return ; anula ctrl capslock
-; Capslock::return ; anula capslock isolado
-; Capslock & space::send {blind}{delete}
+Capslock & space::send {blind}{delete}
 
 ; blind ensure that others hotkeys (ctrl, shift, alt) will be send with the binds
 ; home and end keys
@@ -169,3 +172,10 @@ RAlt & 2:: ; Respondendo que estou ausente
     Run, %RandomMsgAfk%
 return
 
+; Exclusivo para janela de configuração da webcam. Video Proc Amp Properties
+#IfWinActive, ahk_class #32770
+; Configurar webcam via script Camset
+F1::
+    Run, %CamsetPath%
+return
+#IfWinActive
