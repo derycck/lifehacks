@@ -53,6 +53,14 @@ LWin & F3::SoundSet,+1
 RAlt & -::SoundSet,-1
 RAlt & =::SoundSet,+1
 
+; Ativar janela do Wezterm
+LWin & space::
+    if WinExist("ahk_exe wezterm-gui.exe")
+        WinActivate
+    else
+        Run, wezterm
+return
+
 ; enter
 RAlt & 9::send {blind}{enter}
 
@@ -60,7 +68,7 @@ RAlt & 9::send {blind}{enter}
 RAlt & SC027::send {Insert} ;ç
 
 ; asterisco
-; SC028::send {*} ;~
+SC028::send {*} ;~
 
 ; &
 RAlt & SC028::send {&} ;~
@@ -76,17 +84,48 @@ RAlt & c::send {SC01A} ; agudo
 ; Usado simulação de tecla física com o Scan Code (SC) 01A, para manter o comportamento de dead key, para acentuar a próxima letra.
 
 ; brackets curly brackets
-RAlt & e::send {[}
-RAlt & r::send {]}
-RAlt & d::send {{}
-RAlt & f::send {}}
+; Adicionar função de Shift para enviar: $
+RAlt & e::
+    if(GetKeyState("Shift", "P")) {
+        send {$}
+    } else {
+        send {[}
+    }
+return
+
+; Adicionar função de Shift para enviar: %
+RAlt & r::
+    if(GetKeyState("Shift", "P")) {
+        send {`%}
+    } else {
+        send {]}
+    }
+return
+
+; Adicionar função de Shift para enviar: &
+RAlt & d::
+    if(GetKeyState("Shift", "P")) {
+        send {&}
+    } else {
+        send {{}
+    }
+return
+
+; Adicionar função de Shift para enviar: *
+RAlt & f::
+    if(GetKeyState("Shift", "P")) {
+        send {*}
+    } else {
+        send {}}
+    }
+ return
 
 ; pgup pgdown
 RAlt & n::send {blind}{pgup}
 RAlt & m::send {blind}{PgDn}
 
 ; Desabilitar Capslock
-SHIFT & Capslock::return ; anula shift capslock
+Capslock & Shift::return ; anula shift capslock
 Capslock::return ; anula capslock isolado
 
 ; Delete
